@@ -1,0 +1,93 @@
+{
+  "name": "@made-sci/design-system",
+  "version": "0.1.0",
+  "private": false,
+  "description": "Made Scientific design system — v2 tokens, components, and primitives extracted from minimal-science-hub. Apple Health / Numbers / Fey visual language for life-science BD tools.",
+  "license": "UNLICENSED",
+  "author": "Made Scientific",
+  "homepage": "https://github.com/MADE-SCI/made-design-system#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MADE-SCI/made-design-system.git"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "tailwind.preset.cjs",
+    "tailwind.preset.js",
+    "tailwind.preset.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./tailwind.preset": {
+      "types": "./tailwind.preset.d.ts",
+      "import": "./tailwind.preset.js",
+      "require": "./tailwind.preset.cjs"
+    }
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "scripts": {
+    "build": "vite build && tsc -p tsconfig.build.json && node scripts/copy-preset.mjs",
+    "dev": "vite build --watch",
+    "test": "vitest",
+    "test:run": "vitest --run",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0",
+    "react-router-dom": ">=6.0.0",
+    "tailwindcss": ">=3.4.0"
+  },
+  "peerDependenciesMeta": {
+    "react-router-dom": {
+      "optional": true
+    }
+  },
+  "dependencies": {
+    "@radix-ui/react-checkbox": "^1.1.2",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.462.0",
+    "tailwind-merge": "^2.5.4"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.5.0",
+    "@testing-library/react": "^16.0.1",
+    "@types/node": "^22.7.5",
+    "@types/react": "^18.3.10",
+    "@types/react-dom": "^18.3.0",
+    "@vitejs/plugin-react": "^4.3.2",
+    "jsdom": "^25.0.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.27.0",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vite-plugin-dts": "^4.2.3",
+    "vitest": "^2.1.2"
+  },
+  "publishConfig": {
+    "access": "restricted"
+  },
+  "keywords": [
+    "design-system",
+    "react",
+    "tailwind",
+    "components",
+    "made-scientific"
+  ]
+}

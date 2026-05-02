@@ -1,0 +1,188 @@
+/* ============================================================================
+   MADE Design System — v2 token layer
+   ============================================================================
+   Source of truth: v2 design lock at
+   `01_ACTIVE_PROJECTS/PROJ-001 Reporting Products UX/sketches/macos-direction/v2/`
+   (Apple Health / Numbers / Fey visual language — locked 2026-05-01)
+
+   Adoption strategy:
+   - These tokens are ADDITIVE. They do not redefine the existing legacy
+     `--made-teal` / shadcn `--background` etc. tokens used by current
+     components. Old components keep working unchanged.
+   - New components (and migrated old ones) consume v2 tokens via the
+     `md-` Tailwind utility namespace declared in `tailwind.config.ts`
+     (e.g. `bg-md-teal`, `text-md-gray-700`, `shadow-md-card`).
+   - Dark mode flips at the `.dark` selector to match the existing
+     next-themes `attribute="class"` mechanism. The v2 sketches use
+     `[data-theme="dark"]`; both are equivalent flip patterns.
+   ========================================================================== */
+
+:root {
+  /* ----- Brand (constant across themes) ----- */
+  --md-teal:        #00545F;
+  --md-teal-light:  #57BEC9;
+  --md-aqua:        #57C2AC;
+  --md-green:       #43B02A;
+  --md-green-light: #7CCB60;
+  --md-red:         #EE3C27;
+  --md-red-light:   #FF8B7D;
+  --md-yellow:      #F2A900;
+
+  /* Tints (light backgrounds for KPI tiles, info badges) */
+  --md-teal-tint:    #E6F1F2;
+  --md-teal-tint-2:  #D6E8EB;
+  --md-aqua-tint:    #E8F5F1;
+  --md-aqua-tint-2:  #D5EDE5;
+  --md-green-tint:   #ECF7E8;
+  --md-green-tint-2: #DCF0D6;
+  --md-red-tint:     #FDECE9;
+  --md-red-tint-2:   #FBD9D2;
+  --md-yellow-tint:  #FFF4DB;
+
+  /* ----- Gray ramp (Apple-style 11-step) ----- */
+  --md-gray-50:  #FBFBFD;
+  --md-gray-100: #F5F5F7;
+  --md-gray-150: #ECECEE;
+  --md-gray-200: #E1E1E4;
+  --md-gray-300: #CFCFD3;
+  --md-gray-400: #ACACB1;
+  --md-gray-500: #87878D;
+  --md-gray-600: #62626A;
+  --md-gray-700: #3F3F47;
+  --md-gray-800: #27272D;
+  --md-gray-900: #131318;
+
+  /* ----- Surfaces (theme-aware, flipped in dark mode) ----- */
+  --md-bg-page:           #FBFBFD;
+  --md-bg-card:           #FFFFFF;
+  --md-bg-card-secondary: #FBFBFD;
+  --md-bg-sidebar:        rgba(248, 248, 250, 0.74);
+  --md-bg-toolbar:        rgba(251, 251, 253, 0.92);
+  --md-bg-accent:         rgba(0, 0, 0, 0.04);
+
+  /* ----- Text (theme-aware) ----- */
+  --md-text-primary:      #131318;
+  --md-text-secondary:    #62626A;
+  --md-text-tertiary:     #87878D;
+  --md-text-quaternary:   #ACACB1;
+
+  /* ----- Lines / hairlines (theme-aware) ----- */
+  --md-hairline:          rgba(0, 0, 0, 0.06);
+  --md-hairline-strong:   rgba(0, 0, 0, 0.10);
+
+  /* ----- Shadows (theme-aware) ----- */
+  --md-shadow-window:
+    0 0 0 0.5px rgba(0,0,0,0.10),
+    0 0 0 1px rgba(0,0,0,0.04),
+    0 16px 48px rgba(0,0,0,0.12),
+    0 2px 6px rgba(0,0,0,0.06);
+  --md-shadow-card:
+    0 0 0 0.5px rgba(0,0,0,0.04),
+    0 1px 2px rgba(0,0,0,0.04);
+  --md-focus-ring: 0 0 0 3px rgba(0, 84, 95, 0.18);
+
+  /* ----- KPI tint gradients (theme-aware) ----- */
+  --md-tint-pipeline: linear-gradient(135deg, #E6F1F2 0%, #D5EDE5 100%);
+  --md-tint-revenue:  linear-gradient(135deg, #ECF7E8 0%, #DCF0D6 100%);
+  --md-tint-win:      linear-gradient(135deg, #E8F5F1 0%, #D5EDE5 100%);
+  --md-tint-risk:     linear-gradient(135deg, #FDECE9 0%, #FBD9D2 100%);
+
+  /* ----- KPI value colors (theme-aware) ----- */
+  --md-val-pipeline:  var(--md-teal);
+  --md-val-revenue:   #2A7B1A;
+  --md-val-win:       var(--md-teal);
+  --md-val-risk:      #BF2E1F;
+  --md-val-quota:     var(--md-text-primary);
+
+  /* ----- Radius scale ----- */
+  --md-radius-window:  14px;
+  --md-radius-card:    18px;
+  --md-radius-tile:    22px;
+  --md-radius-control: 8px;
+  --md-radius-pill:    999px;
+
+  /* ----- Density tokens (briefing default; opt into dense via .density-dense) ----- */
+  --md-page-padding:    32px;
+  --md-card-padding:    24px;
+  --md-section-margin:  32px;
+  --md-row-padding:     16px;
+
+  /* ----- Type scale (computed values per v2 README) ----- */
+  --md-type-hero:        56px;
+  --md-type-page-title:  32px;
+  --md-type-kpi-hero:    36px;
+  --md-type-kpi-mini:    24px;
+  --md-type-section:     20px;
+  --md-type-card-title:  17px;
+  --md-type-body:        14px;
+  --md-type-helper:      12px;
+  --md-type-eyebrow:     11px;
+}
+
+/* ----------------------------------------------------------------------------
+   Dark mode — flips theme-aware tokens. Brand and gray ramp are constant.
+   ------------------------------------------------------------------------- */
+.dark {
+  --md-bg-page:           #0E0E12;
+  --md-bg-card:           #1A1A1F;
+  --md-bg-card-secondary: #15151A;
+  --md-bg-sidebar:        rgba(22, 22, 26, 0.72);
+  --md-bg-toolbar:        rgba(22, 22, 28, 0.88);
+  --md-bg-accent:         rgba(255, 255, 255, 0.04);
+
+  --md-text-primary:      rgba(255, 255, 255, 0.94);
+  --md-text-secondary:    rgba(255, 255, 255, 0.62);
+  --md-text-tertiary:     rgba(255, 255, 255, 0.42);
+  --md-text-quaternary:   rgba(255, 255, 255, 0.28);
+
+  --md-hairline:          rgba(255, 255, 255, 0.07);
+  --md-hairline-strong:   rgba(255, 255, 255, 0.13);
+
+  --md-shadow-window:
+    0 0 0 0.5px rgba(255,255,255,0.10),
+    0 0 0 1px rgba(0,0,0,0.6),
+    0 16px 48px rgba(0,0,0,0.5),
+    0 2px 6px rgba(0,0,0,0.3);
+  --md-shadow-card:
+    0 0 0 0.5px rgba(255,255,255,0.06),
+    0 1px 2px rgba(0,0,0,0.3);
+  --md-focus-ring:        0 0 0 3px rgba(87, 190, 201, 0.32);
+
+  /* KPI tints in dark — saturated brand on dark base */
+  --md-tint-pipeline: linear-gradient(135deg, rgba(0,110,124,0.40)  0%, rgba(87,194,172,0.18) 100%);
+  --md-tint-revenue:  linear-gradient(135deg, rgba(67,176,42,0.32)  0%, rgba(67,176,42,0.14)  100%);
+  --md-tint-win:      linear-gradient(135deg, rgba(87,194,172,0.34) 0%, rgba(87,194,172,0.16) 100%);
+  --md-tint-risk:     linear-gradient(135deg, rgba(238,60,39,0.32)  0%, rgba(238,60,39,0.14)  100%);
+
+  /* KPI values shift to lighter brand variants on dark base for legibility */
+  --md-val-pipeline:  #6FD4DE;
+  --md-val-revenue:   #95DD7B;
+  --md-val-win:       var(--md-aqua);
+  --md-val-risk:      #FF8B7D;
+  --md-val-quota:     var(--md-text-primary);
+}
+
+/* ----------------------------------------------------------------------------
+   Dense density mode — opt-in via parent .density-dense (or future setting).
+   Same components, smaller token scales — no component fork.
+   ------------------------------------------------------------------------- */
+.density-dense {
+  --md-page-padding:   24px;
+  --md-card-padding:   16px;
+  --md-section-margin: 18px;
+  --md-row-padding:    11px;
+  --md-type-page-title: 26px;
+  --md-type-kpi-hero:   24px;
+}
+
+/* ----------------------------------------------------------------------------
+   Reduced motion — disable custom animations for users with the OS preference.
+   ------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
