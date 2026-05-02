@@ -6,6 +6,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/) starting 
 
 ## [Unreleased]
 
+## [0.1.1] — 2026-05-02
+
+### Fixed
+- **Lovable build compatibility.** v0.1.0 relied on a `prepare` script to build `dist/` post-clone when consumers used `npm install github:...`. Lovable's build environment (likely Bun-based) did not run the prepare script reliably, so `dist/` ended up missing in consumer `node_modules` and downstream Vite builds failed with module resolution errors. Resolution: ship pre-built `dist/` directly in git so the package works under any package manager regardless of script-execution policy.
+
+### Changed
+- **`dist/` is now tracked in git.** The `.gitignore` no longer excludes it. CI/local clones get a working package without running `npm run build`.
+- **Release workflow updated.** When bumping versions: (1) make changes in `src/`, (2) `npm run build` to regenerate `dist/`, (3) commit `src/` + `dist/` together, (4) `npm version patch`, (5) `git push origin main && git push origin <tag>`.
+- The `prepare` script remains as defense-in-depth (its `existsSync('dist')` guard makes it a no-op when `dist/` is already present, but it can rebuild on the rare case where a clone is missing artifacts).
+
+### Migration
+Consumers on `#v0.1.0` should update to `#v0.1.1`:
+
+```diff
+- "@made-sci/design-system": "github:MADE-SCI/made-design-system#v0.1.0"
++ "@made-sci/design-system": "github:MADE-SCI/made-design-system#v0.1.1"
+```
+
+Then run `npm install` to refresh the lockfile.
+
 ## [0.1.0] — 2026-05-02
 
 ### Added

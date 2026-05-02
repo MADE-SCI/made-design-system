@@ -1,6 +1,6 @@
 {
   "name": "@made-sci/design-system",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Made Scientific design system — v2 tokens, components, and primitives extracted from minimal-science-hub. Apple Health / Numbers / Fey visual language for life-science BD tools.",
   "license": "UNLICENSED",

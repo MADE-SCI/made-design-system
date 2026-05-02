@@ -3,7 +3,12 @@ node_modules/
 .pnpm-store/
 
 # build output
-dist/
+# NOTE: dist/ is intentionally NOT gitignored. We ship pre-built artifacts
+# in git so the package works as a `github:` install across any package
+# manager (npm/bun/yarn/pnpm) regardless of whether their lifecycle scripts
+# run `prepare`. The CHANGELOG documents the rebuild-and-commit workflow
+# for releases. *.tsbuildinfo IS still ignored — it's TypeScript's incremental
+# compile cache, not a deliverable.
 *.tsbuildinfo
 
 # logs
