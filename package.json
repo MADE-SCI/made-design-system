@@ -44,7 +44,8 @@
     "test": "vitest",
     "test:run": "vitest --run",
     "typecheck": "tsc --noEmit",
-    "clean": "rm -rf dist"
+    "clean": "rm -rf dist",
+    "prepare": "node -e \"if(!process.env.npm_config_production && !require('fs').existsSync('dist')) require('child_process').execSync('npm run build', {stdio: 'inherit'})\""
   },
   "peerDependencies": {
     "react": ">=18.0.0",
