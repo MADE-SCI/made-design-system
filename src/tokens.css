@@ -117,6 +117,52 @@
   --md-type-body:        14px;
   --md-type-helper:      12px;
   --md-type-eyebrow:     11px;
+
+  /* ----- Opacity scale (0.2.0) ----- */
+  --md-opacity-0:    0;
+  --md-opacity-5:    0.05;
+  --md-opacity-10:   0.10;
+  --md-opacity-20:   0.20;
+  --md-opacity-40:   0.40;   /* disabled state */
+  --md-opacity-60:   0.60;
+  --md-opacity-80:   0.80;
+  --md-opacity-100:  1;
+
+  /* ----- Z-index / layering (0.2.0) ----- */
+  --md-z-base:      0;
+  --md-z-dropdown:  1000;
+  --md-z-sticky:    1100;
+  --md-z-overlay:   1300;
+  --md-z-modal:     1400;
+  --md-z-popover:   1500;
+  --md-z-toast:     1600;
+  --md-z-tooltip:   1700;
+
+  /* ----- Breakpoints (reference values; the Tailwind preset mirrors these as `screens`) (0.2.0) ----- */
+  --md-bp-sm:   640px;
+  --md-bp-md:   768px;
+  --md-bp-lg:   1024px;
+  --md-bp-xl:   1280px;
+  --md-bp-2xl:  1536px;
+
+  /* ----- Motion — duration (0.2.0) ----- */
+  --md-dur-instant:  75ms;
+  --md-dur-fast:     150ms;
+  --md-dur-normal:   220ms;
+  --md-dur-slow:     320ms;
+  --md-dur-slower:   480ms;
+
+  /* ----- Motion — easing (0.2.0) ----- */
+  --md-ease-standard:    cubic-bezier(0.4, 0, 0.2, 1);
+  --md-ease-decelerate:  cubic-bezier(0, 0, 0.2, 1);
+  --md-ease-accelerate:  cubic-bezier(0.4, 0, 1, 1);
+  --md-ease-spring:      cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* ----- Border widths (0.2.0) ----- */
+  --md-border-hairline:  0.5px;
+  --md-border-thin:      1px;
+  --md-border-thick:     2px;
+  --md-border-heavy:     4px;
 }
 
 /* ----------------------------------------------------------------------------

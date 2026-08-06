@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/) starting 
 
 ## [Unreleased]
 
+## [0.2.0] — 2026-08-06
+
+### Added
+- **Completed the token taxonomy** to align with the W3C Design Tokens (DTCG) format v2025.10. New categories in `tokens.css` (all additive `--md-*`, no breaking changes): opacity scale (`--md-opacity-*`), z-index/layering (`--md-z-*`), breakpoints (`--md-bp-*`), motion durations (`--md-dur-*`), motion easings (`--md-ease-*`), and border widths (`--md-border-*`).
+- **`tokens.dtcg.json`** — new canonical DTCG-format export with a three-layer taxonomy (primitive → semantic → component). Machine source of truth, ingestible by Style Dictionary / Tokens Studio / Figma. Shipped in `dist/` and exposed via `@made-sci/design-system/tokens.dtcg.json`.
+- **Tailwind preset** now exposes the new scales: `opacity-md-*`, `z-md-*`, `duration-md-*`, `ease-md-*`, `border-md-*`, and explicit `screens` breakpoints.
+
+### Notes
+- Purely additive — no existing `md-*` utility or token changed value, so consumers on `#v0.1.1` upgrade without visual regressions. Bump the pin to `#v0.2.0` and `npm install`.
+- `tokens.css` (CSS runtime) and `tokens.dtcg.json` (machine SoT) must be kept in lockstep going forward.
+
 ## [0.1.1] — 2026-05-02
 
 ### Fixed

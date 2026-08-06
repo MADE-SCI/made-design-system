@@ -15,6 +15,14 @@ const tokensDest = resolve(root, "dist/tokens.css");
 mkdirSync(dirname(tokensDest), { recursive: true });
 copyFileSync(tokensSrc, tokensDest);
 
+// 1b) Copy the DTCG token export into dist (machine source of truth; consumers
+//     import from `@made-sci/design-system/tokens.dtcg.json`, and tools like
+//     Style Dictionary / Tokens Studio / Figma can ingest it directly).
+const dtcgSrc = resolve(root, "src/tokens.dtcg.json");
+if (existsSync(dtcgSrc)) {
+  copyFileSync(dtcgSrc, resolve(root, "dist/tokens.dtcg.json"));
+}
+
 // 2) Emit the Tailwind preset in three flavors. We don't put the preset in
 //    src/ because it's a build-time artifact consumers import from
 //    `@made-sci/design-system/tailwind.preset` — it doesn't ship through

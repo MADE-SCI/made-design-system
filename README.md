@@ -26,8 +26,9 @@
 - `useDebounce` — debounce any value (search inputs, filters)
 
 **Tokens**
-- `tokens.css` — every v2 design token as CSS variables (light + dark + dense)
-- `tailwind.preset` — Tailwind preset extending `theme.extend` so consumers get `bg-md-teal`, `font-display`, `shadow-md-card`, etc.
+- `tokens.css` — every v2 design token as CSS variables (light + dark + dense). As of 0.2.0 this covers color/tints/gray, surfaces, text, hairlines, shadows, KPI values + gradients, radius, density, type scale, **plus opacity, z-index, breakpoints, motion (duration + easing), and border widths**.
+- `tokens.dtcg.json` — canonical export in W3C **Design Tokens (DTCG) format v2025.10**, three-layer (primitive → semantic → component). Machine source of truth; ingestible by Style Dictionary, Tokens Studio, and Figma. Import as `@made-sci/design-system/tokens.dtcg.json`. Kept in lockstep with `tokens.css`.
+- `tailwind.preset` — Tailwind preset extending `theme.extend` so consumers get `bg-md-teal`, `font-display`, `shadow-md-card`, `opacity-md-40`, `z-md-modal`, `duration-md-fast`, `ease-md-standard`, `border-md-thin`, etc.
 
 ## Quick start
 

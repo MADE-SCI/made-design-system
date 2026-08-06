@@ -1,6 +1,6 @@
 {
   "name": "@made-sci/design-system",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "private": false,
   "description": "Made Scientific design system — v2 tokens, components, and primitives extracted from minimal-science-hub. Apple Health / Numbers / Fey visual language for life-science BD tools.",
   "license": "UNLICENSED",
@@ -29,6 +29,7 @@
       "require": "./dist/index.cjs"
     },
     "./tokens.css": "./dist/tokens.css",
+    "./tokens.dtcg.json": "./dist/tokens.dtcg.json",
     "./tailwind.preset": {
       "types": "./tailwind.preset.d.ts",
       "import": "./tailwind.preset.js",

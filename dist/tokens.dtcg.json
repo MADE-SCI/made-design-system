@@ -1,0 +1,209 @@
+{
+  "$description": "Made Scientific design system — canonical token export in W3C Design Tokens Community Group (DTCG) format, module v2025.10. Three-layer taxonomy: primitive (raw palette + scales) -> semantic (intent aliases) -> component (per-element). This JSON is the machine source of truth; src/tokens.css is the CSS runtime and MUST stay in lockstep. Color values use hex strings and dimensions use CSS-unit strings for broad tool compatibility (Style Dictionary, Tokens Studio, Figma import); the alias chain (curly-brace references) follows the DTCG spec. Apple Health / Numbers / Fey visual language, v2 lock 2026-05-01, categories expanded 2026-08-06 (0.2.0).",
+  "$extensions": {
+    "com.madescientific.meta": {
+      "version": "0.2.0",
+      "cssPrefix": "--md-",
+      "updated": "2026-08-06",
+      "darkModeSelector": ".dark",
+      "denseSelector": ".density-dense"
+    }
+  },
+
+  "primitive": {
+    "color": {
+      "$type": "color",
+      "brand": {
+        "teal":        { "$value": "#00545F", "$description": "Primary brand color" },
+        "teal-light":  { "$value": "#57BEC9" },
+        "aqua":        { "$value": "#57C2AC", "$description": "Secondary brand color" },
+        "green":       { "$value": "#43B02A" },
+        "green-light": { "$value": "#7CCB60" },
+        "red":         { "$value": "#EE3C27" },
+        "red-light":   { "$value": "#FF8B7D" },
+        "yellow":      { "$value": "#F2A900" }
+      },
+      "tint": {
+        "teal":     { "$value": "#E6F1F2" },
+        "teal-2":   { "$value": "#D6E8EB" },
+        "aqua":     { "$value": "#E8F5F1" },
+        "aqua-2":   { "$value": "#D5EDE5" },
+        "green":    { "$value": "#ECF7E8" },
+        "green-2":  { "$value": "#DCF0D6" },
+        "red":      { "$value": "#FDECE9" },
+        "red-2":    { "$value": "#FBD9D2" },
+        "yellow":   { "$value": "#FFF4DB" }
+      },
+      "gray": {
+        "50":  { "$value": "#FBFBFD" },
+        "100": { "$value": "#F5F5F7" },
+        "150": { "$value": "#ECECEE" },
+        "200": { "$value": "#E1E1E4" },
+        "300": { "$value": "#CFCFD3" },
+        "400": { "$value": "#ACACB1" },
+        "500": { "$value": "#87878D" },
+        "600": { "$value": "#62626A" },
+        "700": { "$value": "#3F3F47" },
+        "800": { "$value": "#27272D" },
+        "900": { "$value": "#131318" }
+      }
+    },
+
+    "dimension": {
+      "$type": "dimension",
+      "radius": {
+        "window":  { "$value": "14px" },
+        "card":    { "$value": "18px" },
+        "tile":    { "$value": "22px" },
+        "control": { "$value": "8px" },
+        "pill":    { "$value": "999px" }
+      },
+      "border-width": {
+        "hairline": { "$value": "0.5px" },
+        "thin":     { "$value": "1px" },
+        "thick":    { "$value": "2px" },
+        "heavy":    { "$value": "4px" }
+      },
+      "space": {
+        "page-briefing":    { "$value": "32px" },
+        "card-briefing":    { "$value": "24px" },
+        "section-briefing": { "$value": "32px" },
+        "row-briefing":     { "$value": "16px" },
+        "page-dense":       { "$value": "24px" },
+        "card-dense":       { "$value": "16px" },
+        "section-dense":    { "$value": "18px" },
+        "row-dense":        { "$value": "11px" }
+      },
+      "breakpoint": {
+        "sm":  { "$value": "640px" },
+        "md":  { "$value": "768px" },
+        "lg":  { "$value": "1024px" },
+        "xl":  { "$value": "1280px" },
+        "2xl": { "$value": "1536px" }
+      }
+    },
+
+    "number": {
+      "$type": "number",
+      "opacity": {
+        "0":   { "$value": 0 },
+        "5":   { "$value": 0.05 },
+        "10":  { "$value": 0.1 },
+        "20":  { "$value": 0.2 },
+        "40":  { "$value": 0.4, "$description": "Disabled state" },
+        "60":  { "$value": 0.6 },
+        "80":  { "$value": 0.8 },
+        "100": { "$value": 1 }
+      },
+      "z-index": {
+        "base":     { "$value": 0 },
+        "dropdown": { "$value": 1000 },
+        "sticky":   { "$value": 1100 },
+        "overlay":  { "$value": 1300 },
+        "modal":    { "$value": 1400 },
+        "popover":  { "$value": 1500 },
+        "toast":    { "$value": 1600 },
+        "tooltip":  { "$value": 1700 }
+      }
+    },
+
+    "duration": {
+      "$type": "duration",
+      "instant": { "$value": "75ms" },
+      "fast":    { "$value": "150ms" },
+      "normal":  { "$value": "220ms" },
+      "slow":    { "$value": "320ms" },
+      "slower":  { "$value": "480ms" }
+    },
+
+    "easing": {
+      "$type": "cubicBezier",
+      "standard":   { "$value": [0.4, 0, 0.2, 1] },
+      "decelerate": { "$value": [0, 0, 0.2, 1] },
+      "accelerate": { "$value": [0.4, 0, 1, 1] },
+      "spring":     { "$value": [0.2, 0.8, 0.2, 1] }
+    },
+
+    "font-family": {
+      "$type": "fontFamily",
+      "display": { "$value": ["Funnel Display", "Inter", "system-ui", "sans-serif"] },
+      "body":    { "$value": ["Funnel Sans", "Inter", "system-ui", "sans-serif"] },
+      "mono":    { "$value": ["JetBrains Mono", "SF Mono", "Menlo", "monospace"] }
+    },
+
+    "font-weight": {
+      "$type": "fontWeight",
+      "regular":  { "$value": 400 },
+      "medium":   { "$value": 500 },
+      "semibold": { "$value": 600 },
+      "bold":     { "$value": 700 },
+      "heavy":    { "$value": 800 }
+    }
+  },
+
+  "semantic": {
+    "color": {
+      "$type": "color",
+      "$description": "Light-mode values. Dark mode re-points these at the .dark selector in tokens.css.",
+      "bg-page":           { "$value": "{primitive.color.gray.50}" },
+      "bg-card":           { "$value": "#FFFFFF" },
+      "bg-card-secondary": { "$value": "{primitive.color.gray.50}" },
+      "bg-sidebar":        { "$value": "rgba(248, 248, 250, 0.74)" },
+      "bg-toolbar":        { "$value": "rgba(251, 251, 253, 0.92)" },
+      "bg-accent":         { "$value": "rgba(0, 0, 0, 0.04)" },
+      "text-primary":      { "$value": "{primitive.color.gray.900}" },
+      "text-secondary":    { "$value": "{primitive.color.gray.600}" },
+      "text-tertiary":     { "$value": "{primitive.color.gray.500}" },
+      "text-quaternary":   { "$value": "{primitive.color.gray.400}" },
+      "hairline":          { "$value": "rgba(0, 0, 0, 0.06)" },
+      "hairline-strong":   { "$value": "rgba(0, 0, 0, 0.10)" },
+      "action":            { "$value": "{primitive.color.brand.teal}", "$description": "Primary interactive color" }
+    },
+    "shadow": {
+      "$type": "shadow",
+      "window":     { "$value": "0 0 0 0.5px rgba(0,0,0,0.10), 0 0 0 1px rgba(0,0,0,0.04), 0 16px 48px rgba(0,0,0,0.12), 0 2px 6px rgba(0,0,0,0.06)" },
+      "card":       { "$value": "0 0 0 0.5px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.04)" },
+      "focus-ring": { "$value": "0 0 0 3px rgba(0, 84, 95, 0.18)" }
+    },
+    "motion": {
+      "$description": "Intent aliases over the primitive duration + easing scales.",
+      "duration-ui":   { "$type": "duration", "$value": "{primitive.duration.fast}" },
+      "duration-modal":{ "$type": "duration", "$value": "{primitive.duration.normal}" },
+      "ease-ui":       { "$type": "cubicBezier", "$value": "{primitive.easing.standard}" },
+      "ease-enter":    { "$type": "cubicBezier", "$value": "{primitive.easing.decelerate}" },
+      "ease-exit":     { "$type": "cubicBezier", "$value": "{primitive.easing.accelerate}" }
+    },
+    "typography": {
+      "$type": "typography",
+      "hero":       { "$value": { "fontFamily": "{primitive.font-family.display}", "fontSize": "56px", "fontWeight": 800, "lineHeight": 1.05, "letterSpacing": "-0.03em" } },
+      "page-title": { "$value": { "fontFamily": "{primitive.font-family.display}", "fontSize": "32px", "fontWeight": 700, "lineHeight": 1.15, "letterSpacing": "-0.025em" } },
+      "kpi-hero":   { "$value": { "fontFamily": "{primitive.font-family.display}", "fontSize": "36px", "fontWeight": 800, "lineHeight": 1.1, "letterSpacing": "-0.025em" } },
+      "kpi-mini":   { "$value": { "fontFamily": "{primitive.font-family.display}", "fontSize": "24px", "fontWeight": 800, "lineHeight": 1.15, "letterSpacing": "-0.022em" } },
+      "section":    { "$value": { "fontFamily": "{primitive.font-family.display}", "fontSize": "20px", "fontWeight": 700, "lineHeight": 1.25, "letterSpacing": "-0.018em" } },
+      "card-title": { "$value": { "fontFamily": "{primitive.font-family.display}", "fontSize": "17px", "fontWeight": 700, "lineHeight": 1.3, "letterSpacing": "-0.012em" } },
+      "body":       { "$value": { "fontFamily": "{primitive.font-family.body}", "fontSize": "14px", "fontWeight": 400, "lineHeight": 1.5, "letterSpacing": "-0.005em" } },
+      "helper":     { "$value": { "fontFamily": "{primitive.font-family.body}", "fontSize": "12px", "fontWeight": 400, "lineHeight": 1.45, "letterSpacing": "-0.002em" } },
+      "eyebrow":    { "$value": { "fontFamily": "{primitive.font-family.body}", "fontSize": "11px", "fontWeight": 600, "lineHeight": 1.3, "letterSpacing": "0.08em" } }
+    }
+  },
+
+  "component": {
+    "kpi": {
+      "$type": "color",
+      "$description": "KPI value colors (light mode). Dark-mode variants live under the .dark selector in tokens.css.",
+      "val-pipeline": { "$value": "{primitive.color.brand.teal}" },
+      "val-revenue":  { "$value": "#2A7B1A" },
+      "val-win":      { "$value": "{primitive.color.brand.teal}" },
+      "val-risk":     { "$value": "#BF2E1F" },
+      "val-quota":    { "$value": "{semantic.color.text-primary}" }
+    },
+    "kpi-tint": {
+      "$type": "gradient",
+      "$description": "KPI tile background gradients (light mode).",
+      "pipeline": { "$value": "linear-gradient(135deg, #E6F1F2 0%, #D5EDE5 100%)" },
+      "revenue":  { "$value": "linear-gradient(135deg, #ECF7E8 0%, #DCF0D6 100%)" },
+      "win":      { "$value": "linear-gradient(135deg, #E8F5F1 0%, #D5EDE5 100%)" },
+      "risk":     { "$value": "linear-gradient(135deg, #FDECE9 0%, #FBD9D2 100%)" }
+    }
+  }
+}

@@ -146,6 +146,58 @@ export default {
       animation: {
         "md-skel-pulse": "md-skel-pulse 1.6s ease-in-out infinite",
       },
+      // Opacity scale (0.2.0) — e.g. opacity-md-40 for disabled states
+      opacity: {
+        "md-0": "var(--md-opacity-0)",
+        "md-5": "var(--md-opacity-5)",
+        "md-10": "var(--md-opacity-10)",
+        "md-20": "var(--md-opacity-20)",
+        "md-40": "var(--md-opacity-40)",
+        "md-60": "var(--md-opacity-60)",
+        "md-80": "var(--md-opacity-80)",
+        "md-100": "var(--md-opacity-100)",
+      },
+      // Z-index / layering (0.2.0) — e.g. z-md-modal
+      zIndex: {
+        "md-base": "var(--md-z-base)",
+        "md-dropdown": "var(--md-z-dropdown)",
+        "md-sticky": "var(--md-z-sticky)",
+        "md-overlay": "var(--md-z-overlay)",
+        "md-modal": "var(--md-z-modal)",
+        "md-popover": "var(--md-z-popover)",
+        "md-toast": "var(--md-z-toast)",
+        "md-tooltip": "var(--md-z-tooltip)",
+      },
+      // Border widths (0.2.0) — e.g. border-md-thin
+      borderWidth: {
+        "md-hairline": "var(--md-border-hairline)",
+        "md-thin": "var(--md-border-thin)",
+        "md-thick": "var(--md-border-thick)",
+        "md-heavy": "var(--md-border-heavy)",
+      },
+      // Motion duration (0.2.0) — e.g. duration-md-fast
+      transitionDuration: {
+        "md-instant": "var(--md-dur-instant)",
+        "md-fast": "var(--md-dur-fast)",
+        "md-normal": "var(--md-dur-normal)",
+        "md-slow": "var(--md-dur-slow)",
+        "md-slower": "var(--md-dur-slower)",
+      },
+      // Motion easing (0.2.0) — e.g. ease-md-standard
+      transitionTimingFunction: {
+        "md-standard": "var(--md-ease-standard)",
+        "md-decelerate": "var(--md-ease-decelerate)",
+        "md-accelerate": "var(--md-ease-accelerate)",
+        "md-spring": "var(--md-ease-spring)",
+      },
+      // Breakpoints (0.2.0) — mirror the --md-bp-* reference tokens
+      screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
+        "2xl": "1536px",
+      },
     },
   },
 } satisfies Partial<Config>;
