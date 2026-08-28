@@ -21,9 +21,17 @@ module.exports = {
   darkMode: ["class"],
   theme: {
     extend: {
+      // Brand type stack, single-sourced from `--md-font-*` in tokens.css so
+      // Tailwind consumers and plain-CSS consumers cannot drift apart. The
+      // literal stack inside each var() is the fallback, so these utilities
+      // resolve exactly as before for a consumer that takes the preset but
+      // never imports tokens.css. The package names the families and never
+      // loads them — consumers self-host the Funnel faces.
       fontFamily: {
-        display: ['"Funnel Display"', "Inter", "system-ui", "sans-serif"],
-        "funnel-sans": ['"Funnel Sans"', "Inter", "system-ui", "sans-serif"],
+        display: 'var(--md-font-display, "Funnel Display", Inter, system-ui, sans-serif)',
+        body: 'var(--md-font-body, "Funnel Sans", Inter, system-ui, sans-serif)',
+        // Retained alias — `font-funnel-sans` predates the token names.
+        "funnel-sans": 'var(--md-font-body, "Funnel Sans", Inter, system-ui, sans-serif)',
       },
       colors: {
         md: {

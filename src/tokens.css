@@ -107,6 +107,14 @@
   --md-section-margin:  32px;
   --md-row-padding:     16px;
 
+  /* ----- Type families (brand stack, constant across themes) ----- */
+  /* These tokens NAME the families; this package never loads them. There is
+     deliberately no @font-face and no Google Fonts import here — each consumer
+     self-hosts the Funnel faces so no client traffic reaches a font CDN. Until
+     a consumer loads them, the fallbacks carry the layout. */
+  --md-font-display: "Funnel Display", Inter, system-ui, sans-serif;
+  --md-font-body:    "Funnel Sans", Inter, system-ui, sans-serif;
+
   /* ----- Type scale (computed values per v2 README) ----- */
   --md-type-hero:        56px;
   --md-type-page-title:  32px;

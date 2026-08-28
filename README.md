@@ -28,6 +28,7 @@
 **Tokens**
 - `tokens.css` — every v2 design token as CSS variables (light + dark + dense)
 - `tailwind.preset` — Tailwind preset extending `theme.extend` so consumers get `bg-md-teal`, `font-display`, `shadow-md-card`, etc.
+- Type stack — `--md-font-display` / `--md-font-body` name the brand faces. The package names them and never loads them: no `@font-face`, no Google Fonts import, so consumers self-host the faces and no client traffic reaches a font CDN.
 
 ## Quick start
 
@@ -107,6 +108,8 @@ Design DNA locked at:
 `AI_DEVELOPMENT/01_ACTIVE_PROJECTS/PROJ-001 Reporting Products UX/sketches/macos-direction/v2/`
 
 Brand stack: Funnel Display (display) + Funnel Sans (body), tabular numerals, teal `#00545F` primary, aqua `#57C2AC` secondary, Apple-style 11-step gray ramp.
+
+The type stack is a token, not prose. `--md-font-display` and `--md-font-body` in `tokens.css` are the source of truth; the Tailwind preset's `font-display`, `font-body`, and `font-funnel-sans` utilities all resolve through them. Consume the tokens rather than restating the family names — products that hard-coded their own pair have drifted off brand before.
 
 ## Changelog
 

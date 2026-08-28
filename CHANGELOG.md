@@ -6,6 +6,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/) starting 
 
 ## [Unreleased]
 
+### Added
+- **Font family tokens.** `--md-font-display` (Funnel Display) and `--md-font-body` (Funnel Sans) now ship in `tokens.css`. The brand type stack previously existed only as README prose and as hard-coded literals in the Tailwind preset, so consumers reading the CSS tokens found colors, spacing, and type sizes but no families — and two shipped client-facing products drifted onto a different pair without anyone noticing. The tokens only NAME the families: there is still no `@font-face` and no Google Fonts import in this package, and consumers continue to self-host the faces.
+- **`font-body` utility** in the Tailwind preset — the token-named counterpart to `font-display`. The existing `font-funnel-sans` is retained as an alias and behaves identically.
+
+### Changed
+- **Tailwind preset font families now resolve through the tokens.** `font-display` and `font-funnel-sans` were hard-coded family lists; they now read `var(--md-font-display, …)` and `var(--md-font-body, …)` so Tailwind consumers and plain-CSS consumers cannot diverge. Each `var()` keeps the previous literal stack as its fallback, so a consumer that uses the preset without importing `tokens.css` renders exactly as before — no visual change to any existing consumer.
+
 ## [0.1.1] — 2026-05-02
 
 ### Fixed
