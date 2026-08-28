@@ -23,9 +23,16 @@ export default {
   darkMode: ["class"],
   theme: {
     extend: {
+      // Single-sourced from the --md-font-* custom properties so the preset,
+      // tokens.css and tokens.dtcg.json cannot drift apart. The literal stack
+      // inside each var() is the fallback, so a consumer that takes the preset
+      // but never imports tokens.css resolves exactly as before.
       fontFamily: {
-        display: ['"Funnel Display"', "Inter", "system-ui", "sans-serif"],
-        "funnel-sans": ['"Funnel Sans"', "Inter", "system-ui", "sans-serif"],
+        display: 'var(--md-font-display, "Funnel Display", Inter, system-ui, sans-serif)',
+        body: 'var(--md-font-body, "Funnel Sans", Inter, system-ui, sans-serif)',
+        mono: 'var(--md-font-mono, "JetBrains Mono", "SF Mono", Menlo, monospace)',
+        // Retained alias — `font-funnel-sans` predates the token names.
+        "funnel-sans": 'var(--md-font-body, "Funnel Sans", Inter, system-ui, sans-serif)',
       },
       colors: {
         md: {

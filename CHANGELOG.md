@@ -6,6 +6,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/) starting 
 
 ## [Unreleased]
 
+### Added
+- **Font-family tokens** — `--md-font-display`, `--md-font-body`, `--md-font-mono` in `tokens.css`, mirroring `primitive.font-family.*` in `tokens.dtcg.json`. 0.2.0 declared that the CSS runtime and the machine source of truth must stay in lockstep; font families were the one group that was not. They existed in the DTCG export, the Tailwind preset and the README, but never as custom properties, so consumers that import `tokens.css` and write plain CSS inherited every color and learned nothing about the type stack. Two client-facing products drifted onto DM Sans + Space Grotesk that way.
+- **`src/tokens.test.ts`** — fails if `tokens.css` and `tokens.dtcg.json` disagree on any font family, if a DTCG family has no custom property, or if an `@font-face` or font-CDN reference ever enters the package. Verified by breaking each case deliberately.
+- **`font-mono`** and **`font-body`** Tailwind utilities, alongside the existing `font-display`.
+
+### Changed
+- The Tailwind preset's `fontFamily` now single-sources from the `--md-font-*` custom properties instead of repeating the literals. Each `var()` keeps the previous literal stack as its fallback, so a consumer that takes the preset without importing `tokens.css` resolves exactly as before. `font-funnel-sans` is retained as an alias rather than renamed.
+
+### Notes
+- Purely additive. No existing token or utility changed value. The package still names families only and never loads them — self-host the faces so no client traffic reaches a font CDN.
+
 ## [0.2.0] — 2026-08-06
 
 ### Added
