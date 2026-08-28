@@ -109,6 +109,8 @@ Design DNA locked at:
 
 Brand stack: Funnel Display (display) + Funnel Sans (body), tabular numerals, teal `#00545F` primary, aqua `#57C2AC` secondary, Apple-style 11-step gray ramp.
 
+The families are tokens — `--md-font-display`, `--md-font-body`, `--md-font-mono` (`font-display`, `font-body`, `font-mono` in Tailwind) — so consumers inherit the stack instead of restating it. The package names the families and never loads them: self-host the faces, so no client traffic reaches a font CDN.
+
 ## Changelog
 
 See [CHANGELOG.md](./CHANGELOG.md) for release history.

@@ -107,6 +107,22 @@
   --md-section-margin:  32px;
   --md-row-padding:     16px;
 
+  /* ----- Type families (brand stack, constant across themes) ----- */
+  /* Mirrors primitive.font-family.* in tokens.dtcg.json, enforcing the lockstep
+     rule 0.2.0 declared. The families were in the DTCG export, the Tailwind
+     preset and the README, but never as custom properties — so a consumer that
+     imports this file and writes plain CSS inherited every color and learned
+     nothing about the type stack. Two client-facing products drifted off-brand
+     that way. src/tokens.test.ts now fails if these two files disagree.
+
+     These tokens NAME the families; this package never loads them. No
+     @font-face and no font-CDN import: consumers self-host, so no client
+     traffic reaches a third party on a confidential page. Until a consumer
+     loads the faces, the fallbacks carry the layout. */
+  --md-font-display:  "Funnel Display", Inter, system-ui, sans-serif;
+  --md-font-body:     "Funnel Sans", Inter, system-ui, sans-serif;
+  --md-font-mono:     "JetBrains Mono", "SF Mono", Menlo, monospace;
+
   /* ----- Type scale (computed values per v2 README) ----- */
   --md-type-hero:        56px;
   --md-type-page-title:  32px;
