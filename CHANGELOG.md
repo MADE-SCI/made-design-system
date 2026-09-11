@@ -1,3 +1,7 @@
+# 0.2.1 — Internal reporting expression
+
+Add opt-in instrument tokens and generated CSS/JS/JSON exports for the approved macOS reporting direction. Default brand tokens and preset are unchanged. See docs/INSTRUMENT.md.
+
 # Changelog
 
 All notable changes to `@made-sci/design-system` are documented here.

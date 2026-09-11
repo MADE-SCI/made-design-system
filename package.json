@@ -1,8 +1,8 @@
 {
   "name": "@made-sci/design-system",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": false,
-  "description": "Made Scientific design system — v2 tokens, components, and primitives extracted from minimal-science-hub. Apple Health / Numbers / Fey visual language for life-science BD tools.",
+  "description": "Made Scientific design system \u2014 v2 tokens, components, and primitives extracted from minimal-science-hub. Apple Health / Numbers / Fey visual language for life-science BD tools.",
   "license": "UNLICENSED",
   "author": "Made Scientific",
   "homepage": "https://github.com/MADE-SCI/made-design-system#readme",
@@ -34,13 +34,19 @@
       "types": "./tailwind.preset.d.ts",
       "import": "./tailwind.preset.js",
       "require": "./tailwind.preset.cjs"
+    },
+    "./instrument.css": "./dist/instrument.css",
+    "./instrument.tokens.json": "./dist/instrument.tokens.json",
+    "./instrument": {
+      "types": "./dist/instrument.d.ts",
+      "import": "./dist/instrument.js"
     }
   },
   "sideEffects": [
     "*.css"
   ],
   "scripts": {
-    "build": "vite build && tsc -p tsconfig.build.json && node scripts/copy-preset.mjs",
+    "build": "vite build && tsc -p tsconfig.build.json && node scripts/copy-preset.mjs && node scripts/build-instrument.mjs",
     "dev": "vite build --watch",
     "test": "vitest",
     "test:run": "vitest --run",

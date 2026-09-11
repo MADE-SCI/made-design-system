@@ -1,0 +1,1 @@
+export declare const instrumentTokens: { font: { $type: string; $value: string[] }; light: Record<string, string>; dark: Record<string, string>; radius: string; "control-height": string; "touch-target": string; $description: string };
