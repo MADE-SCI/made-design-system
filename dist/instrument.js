@@ -1,0 +1,43 @@
+// Generated from src/instrument.tokens.json.
+export const instrumentTokens = {
+  "$description": "Opt-in internal reporting expression. Values are independent of the external brand typography. CSS and JavaScript artifacts are generated from this source.",
+  "font": {
+    "$type": "fontFamily",
+    "$value": [
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "Segoe UI",
+      "system-ui",
+      "sans-serif"
+    ]
+  },
+  "light": {
+    "canvas": "240 11% 98%",
+    "surface": "0 0% 100%",
+    "surface-secondary": "240 6% 96%",
+    "surface-selected": "188 25% 94%",
+    "text": "240 12% 8%",
+    "text-secondary": "240 4% 40%",
+    "separator": "240 5% 88%",
+    "control-border": "240 5% 76%",
+    "action": "188 100% 19%",
+    "on-action": "0 0% 100%",
+    "focus": "188 100% 19%"
+  },
+  "dark": {
+    "canvas": "240 12% 6%",
+    "surface": "240 9% 11%",
+    "surface-secondary": "240 8% 15%",
+    "surface-selected": "188 35% 19%",
+    "text": "240 6% 96%",
+    "text-secondary": "240 5% 72%",
+    "separator": "240 5% 29%",
+    "control-border": "240 5% 44%",
+    "action": "168 47% 55%",
+    "on-action": "188 100% 10%",
+    "focus": "168 47% 55%"
+  },
+  "radius": "10px",
+  "control-height": "36px",
+  "touch-target": "44px"
+};
