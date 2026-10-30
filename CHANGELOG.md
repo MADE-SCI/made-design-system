@@ -10,6 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/) starting 
 
 ## [Unreleased]
 
+### Proposed (brand kit, held for Made marketing's answer)
+
+- `--md-aqua` to `#57C1AC`, per Made marketing's Final palette (the same RGB as before, 87/193/172; Brand Guide V1.2 printed the hex one digit off).
+- New `--md-gc-yellow` `#FFC845`, the brand's yellow. `--md-yellow` stays as the UI warning token.
+- `--md-red` is the colour the Final palette names Made Red. The token keeps its name.
+
 ### Added
 - **Font-family tokens** — `--md-font-display`, `--md-font-body`, `--md-font-mono` in `tokens.css`, mirroring `primitive.font-family.*` in `tokens.dtcg.json`. 0.2.0 declared that the CSS runtime and the machine source of truth must stay in lockstep; font families were the one group that was not. They existed in the DTCG export, the Tailwind preset and the README, but never as custom properties, so consumers that import `tokens.css` and write plain CSS inherited every color and learned nothing about the type stack. Two client-facing products drifted onto DM Sans + Space Grotesk that way.
 - **`src/tokens.test.ts`** — fails if `tokens.css` and `tokens.dtcg.json` disagree on any font family, if a DTCG family has no custom property, or if an `@font-face` or font-CDN reference ever enters the package. Verified by breaking each case deliberately.
