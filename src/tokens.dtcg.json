@@ -16,12 +16,13 @@
       "brand": {
         "teal":        { "$value": "#00545F", "$description": "Primary brand color" },
         "teal-light":  { "$value": "#57BEC9" },
-        "aqua":        { "$value": "#57C2AC", "$description": "Secondary brand color" },
+        "aqua":        { "$value": "#57C1AC", "$description": "Secondary brand color" },
         "green":       { "$value": "#43B02A" },
         "green-light": { "$value": "#7CCB60" },
         "red":         { "$value": "#EE3C27" },
         "red-light":   { "$value": "#FF8B7D" },
-        "yellow":      { "$value": "#F2A900" }
+        "yellow":      { "$value": "#F2A900", "$description": "UI warning token. The brand yellow is gc-yellow." },
+        "gc-yellow":   { "$value": "#FFC845", "$description": "GC Yellow, highlights only" }
       },
       "tint": {
         "teal":     { "$value": "#E6F1F2" },

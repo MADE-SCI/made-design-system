@@ -21,12 +21,13 @@
   /* ----- Brand (constant across themes) ----- */
   --md-teal:        #00545F;
   --md-teal-light:  #57BEC9;
-  --md-aqua:        #57C2AC;
+  --md-aqua:        #57C1AC;
   --md-green:       #43B02A;
   --md-green-light: #7CCB60;
   --md-red:         #EE3C27;
   --md-red-light:   #FF8B7D;
-  --md-yellow:      #F2A900;
+  --md-yellow:      #F2A900; /* UI warning token. The brand's yellow is --md-gc-yellow. */
+  --md-gc-yellow:   #FFC845; /* GC Yellow, highlights only */
 
   /* Tints (light backgrounds for KPI tiles, info badges) */
   --md-teal-tint:    #E6F1F2;
